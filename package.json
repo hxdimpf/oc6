@@ -1,0 +1,14 @@
+{
+  "name": "oc6",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OC6 — thin proxy frontend",
+  "main": "app.js",
+  "scripts": { "start": "node app.js" },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mariadb": "^3.4.1",
+    "dotenv": "^16.5.0"
+  }
+}
