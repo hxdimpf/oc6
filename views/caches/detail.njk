@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ cache.name }} ({{ cache.referenceCode }}) — OC6</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; }
+    .meta { color: #555; }
+    .badge { display:inline-block; background:#eef; border-radius:4px; padding:1px 8px; font-size:0.85em; }
+    footer { margin-top:2rem; color:#999; font-size:0.85em; }
+  </style>
+</head>
+<body>
+  <h1>{{ cache.name }}</h1>
+  <p class="meta">
+    <span class="badge">{{ cache.referenceCode }}</span>
+    {{ cache.typeName }} · {{ cache.sizeName }} · {{ cache.statusName }}
+  </p>
+  <p>D {{ cache.difficulty }} / T {{ cache.terrain }} — by <strong>{{ cache.ownerName }}</strong> — {{ cache.findCount }} finds</p>
+  <p class="meta">{{ cache.lat }}, {{ cache.lon }}</p>
+  <footer>OC6 spike — Bun · TypeScript · Hono · mariadb · Nunjucks</footer>
+</body>
+</html>

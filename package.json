@@ -1,0 +1,24 @@
+{
+  "name": "oc6",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "opencaching.de — Bun + TypeScript + Hono spike (OC6)",
+  "scripts": {
+    "dev": "bun --watch run src/server.ts",
+    "start": "bun run src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "mariadb": "^3.4.1",
+    "nunjucks": "^3.2.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "@types/nunjucks": "^3.2.6",
+    "typescript": "^5.7.2"
+  }
+}

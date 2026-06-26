@@ -1,0 +1,24 @@
+# OC6 stack — mirrors the OC5 stack (/opt/stacks/oc5) but on Bun instead of Node.
+# Same pattern: official runtime image + bind-mounted repo + install-and-run,
+# joined to the shared external `oc` network where `db:3306` (MariaDB) lives.
+#
+# The real server copy lives at /opt/stacks/oc6/docker-compose.yml with the actual
+# DATABASE_URL password filled in (kept out of git, like the oc5 stack).
+name: oc6
+services:
+  oc6:
+    image: oven/bun:1
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - /opt/repos/oc6:/app
+    command: sh -c "bun install --silent && exec bun run src/server.ts"
+    environment:
+      PORT: "3000"
+      DATABASE_URL: mysql://oc:CHANGEME@db:3306/oc
+      NODE_ENV: development
+    expose: ["3000"]
+    networks: [oc]
+networks:
+  oc:
+    external: true
